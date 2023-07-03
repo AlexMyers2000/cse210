@@ -4,45 +4,63 @@ class Program
 {
     static void Main(string[] args)
     {
-        DisplayWelcomeMessage();
+        // Console.WriteLine("Hello Prep5 World!");
 
+        /*
+        For this assignment, write a C# program that has several simple functions:
+            DisplayWelcome - Displays the message, "Welcome to the Program!"
+            PromptUserName - Asks for and returns the user's name (as a string)
+            PromptUserNumber - Asks for and returns the user's favorite number (as an integer)
+            SquareNumber - Accepts an integer as a parameter and returns that number squared (as an integer)
+            DisplayResult - Accepts the user's name and the squared number and displays them.
+        Your Main function should then call each of these functions saving the return values and passing data to them as necessary.
+        */
+
+        DisplayWelcome();
+
+        // Calling Functions
         string userName = PromptUserName();
         int userNumber = PromptUserNumber();
-
         int squaredNumber = SquareNumber(userNumber);
-
         DisplayResult(userName, squaredNumber);
-    }
 
-    static void DisplayWelcomeMessage()
-    {
-        Console.WriteLine("Welcome to my program user!");
-    }
 
-    static string PromptUserName()
-    {
-        Console.Write("Please typer your name here: ");
-        string name = Console.ReadLine();
 
-        return name;
-    }
+        static void DisplayWelcome()
+        {
+            Console.WriteLine("Welcome to the program!");
+        }
 
-    static int PromptUserNumber()
-    {
-        Console.Write("Please enter what your favorite number is! : ");
-        int number = int.Parse(Console.ReadLine());
+        static string PromptUserName()
+        {
+            Console.Write($"Please enter your name: ");
+            string name = Console.ReadLine();
 
-        return number;
-    }
+            return name;
+        }
 
-    static int SquareNumber(int number)
-    {
-        int square = number * number;
-        return square;
-    }
+        static int PromptUserNumber()
+        {
+            Console.Write($"Please enter your favorite number: ");
+            string userNumber = Console.ReadLine();
+            int favoriteNumber = int.Parse(userNumber);
 
-    static void DisplayResult(string name, int square)
-    {
-        Console.WriteLine($"{name}, here is the square of your number  {square}");
+            return favoriteNumber;
+        }
+
+        static int SquareNumber(int num)
+        {
+
+            int square = num * num;
+
+            return square;
+        }
+
+        static void DisplayResult(string name, int square)
+        {
+            Console.WriteLine($"{name}, the square of your number is {square}");
+        }
+
+
     }
 }
